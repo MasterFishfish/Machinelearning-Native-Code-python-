@@ -1,6 +1,7 @@
 import random
 
 import sympy
+import numpy
 
 def pdtest():
     x = sympy.symbols("x")
@@ -32,6 +33,7 @@ class Chinese(Person):
     def walk(self):
         print('is walking...')
 
+
 if __name__ == "__main__":
     c = Chinese('bigberg', 22, 'Chinese')
     d = Chinese('zzz', 23, 'aaa')
@@ -41,4 +43,13 @@ if __name__ == "__main__":
         array.append(random.random())
     print(array)
 
-    c.talk()
+    g = [1, 2, 3]
+    t = [2, 3, 4]
+    print(numpy.dot(g, t))
+
+    outdata = 2
+    target_data = 3
+    x = sympy.symbols("x")
+    y = 0.5 * (( target_data - x ) ** 2.0)
+    error_out_dify = sympy.diff(y, x).subs({x: outdata})
+    print(error_out_dify)
