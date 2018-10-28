@@ -203,7 +203,7 @@ class CNN():
 
         #梯度下降
         hidden_update += np.dot(hidden_layer.T, output_delta)
-        input_update += np.dot(hidden_delta.T, input_data)
+        input_update += np.dot(input_data.T, hidden_delta)
         conv_update += matrix_convolution(case, pooling_delta.shape, pooling_delta)
 
         self.input_weight += input_update * learn
